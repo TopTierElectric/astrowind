@@ -13,13 +13,13 @@ export interface Props {
 
 const {
   title,
-  description = "Licensed & insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616)\u00a0334\u2011\u20097159.",
+  description = 'Licensed & insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting. Get a clear estimate—call (616)\u00a0334\u2011\u20097159.',
   canonical,
   ogTitle,
   ogDescription,
-  ogImage = "https://toptier-electrical.com/assets/images/hero.jpg",
-  ogType = "website",
-  robots = "index, follow",
+  ogImage = 'https://toptier-electrical.com/assets/images/hero.jpg',
+  ogType = 'website',
+  robots = 'index, follow',
   jsonLd,
 } = Astro.props;
 
@@ -27,23 +27,22 @@ const canonicalUrl = canonical || `https://toptier-electrical.com${Astro.url.pat
 const resolvedOgTitle = ogTitle || title;
 const resolvedOgDescription = ogDescription || description;
 
-const jsonLdScripts = jsonLd
-  ? Array.isArray(jsonLd)
-    ? jsonLd
-    : [jsonLd]
-  : [];
+const jsonLdScripts = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTQKB78PLE"></script>
-    <script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-FTQKB78PLE"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-FTQKB78PLE");
+      function gtag() {
+        // eslint-disable-next-line prefer-rest-params
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-FTQKB78PLE');
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,10 +70,7 @@ const jsonLdScripts = jsonLd
       onload="this.media='all'"
     />
     <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </noscript>
     <!-- TTE Styles -->
     <link rel="preload" href="/css/design-tokens.css" as="style" />
@@ -85,15 +81,13 @@ const jsonLdScripts = jsonLd
     <link rel="stylesheet" href="/css/components.css" />
     <link rel="icon" type="image/png" href="/images/logos/TopTierElectrical_Primary_FlatGold_512.png" />
     <!-- JSON-LD Structured Data -->
-    {jsonLdScripts.map((ld) => (
-      <script type="application/ld+json" set:html={ld} />
-    ))}
+    {jsonLdScripts.map((ld) => <script type="application/ld+json" is:inline set:html={ld} />)}
     <!-- Cloudflare Insights -->
     <script
+      is:inline
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token":"f3a4c2b1d9e54a6b8c1f7e2d3a4b5c6d"}'
-    ></script>
+      data-cf-beacon='{"token":"f3a4c2b1d9e54a6b8c1f7e2d3a4b5c6d"}'></script>
     <slot name="head" />
   </head>
   <body>
@@ -102,10 +96,7 @@ const jsonLdScripts = jsonLd
       <div class="container header-inner">
         <a class="logo" href="/" aria-label="Top Tier Electrical home">
           <picture>
-            <source
-              srcset="/images/logos/TopTierElectrical_Primary_FlatGold_512.png"
-              type="image/png"
-            />
+            <source srcset="/images/logos/TopTierElectrical_Primary_FlatGold_512.png" type="image/png" />
             <img
               src="/images/logos/TopTierElectrical_Primary_FlatGold_512.png"
               alt="Top Tier Electrical logo"
@@ -181,10 +172,7 @@ const jsonLdScripts = jsonLd
     <footer class="site-footer">
       <div class="footer-logo">
         <picture>
-          <source
-            srcset="/images/logos/TopTierElectrical_Primary_FlatGold_512.png"
-            type="image/png"
-          />
+          <source srcset="/images/logos/TopTierElectrical_Primary_FlatGold_512.png" type="image/png" />
           <img
             src="/images/logos/TopTierElectrical_Primary_FlatGold_512.png"
             alt="Top Tier Electrical logo"
