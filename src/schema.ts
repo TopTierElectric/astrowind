@@ -1,57 +1,73 @@
-import { JSONLD, JSONSchema } from 'jsonld-schema-generator';
+export function localBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Electrician',
+    name: 'Top Tier Electrical',
+    url: 'https://toptier-electrical.com/',
+    telephone: '+1-616-334-7159',
+    email: 'info@toptier-electrical.com',
+    areaServed: [
+      'West Michigan',
+      'Holland, MI',
+      'Grand Rapids, MI',
+      'Byron Center, MI',
+      'Zeeland, MI',
+      'Saugatuck, MI',
+      'Hudsonville, MI',
+      'Allegan, MI',
+    ],
+    sameAs: ['https://www.facebook.com/profile.php?id=61573826170938'],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '13:00' },
+    ],
+  };
+}
 
-const localBusinessSchema: JSONSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Your Business Name',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '123 Main St',
-    addressLocality: 'Your City',
-    addressRegion: 'Your State',
-    postalCode: '12345',
-    addressCountry: 'US'
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.5',
-    reviewCount: '100'
-  }
-};
+export function serviceSchema(serviceName: string, serviceDescription: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: serviceName,
+    description: serviceDescription,
+    provider: {
+      '@type': 'Electrician',
+      name: 'Top Tier Electrical',
+      url: 'https://toptier-electrical.com/',
+    },
+    areaServed: 'West Michigan',
+  };
+}
 
-const serviceSchema: JSONSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Your Service Type',
-  provider: localBusinessSchema
-};
-
-const faqSchema: JSONSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
+export function faqSchema(questions: Array<{ question: string; answer: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.map((q) => ({
       '@type': 'Question',
-      name: 'Your FAQ Question?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Your answer here.'
-      }
-    }
-  ]
-};
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer },
+    })),
+  };
+}
 
-const articleSchema: JSONSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Your Article Title',
-  author: {
-    '@type': 'Person',
-    name: 'Author Name'
-  },
-  datePublished: '2026-03-28',
-  image: 'URL to image',
-  articleBody: 'Main content of the article...'
-};
-
-export { localBusinessSchema, serviceSchema, faqSchema, articleSchema };
+export function articleSchema(headline: string, authorName: string, datePublished: string, image: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline,
+    author: { '@type': 'Person', name: authorName },
+    datePublished,
+    image,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Top Tier Electrical',
+      url: 'https://toptier-electrical.com/',
+    },
+  };
+}

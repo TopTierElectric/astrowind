@@ -1,1 +1,31 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <meta name="description" content="A base layout for Astrowind projects">\n    <meta name="author" content="TopTierElectric">\n    <meta name="keywords" content="Astrowind, Layout, BaseLayout">\n    <link rel="stylesheet" href="/styles.css">\n    <title>Base Layout</title>\n    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ANALYTICS_ID"></script>\n    <script>\n        window.dataLayer = window.dataLayer || [];\n        function gtag(){dataLayer.push(arguments);}\n        gtag('js', new Date());\n        gtag('config', 'YOUR_ANALYTICS_ID');\n    <\/script>\n    <script type="application/ld+json">\n        {\n            "@context": "https://schema.org",\n            "@type": "WebPage",\n            "name": "Base Layout",\n            "description": "A base layout for Astrowind projects."\n        }\n    <\/script>\n</head>\n<body>\n    <header>\n        <h1>Welcome to the Base Layout</h1>\n    </header>\n    <main>\n        <slot></slot>\n    </main>\n    <footer>\n        <p>&copy; 2026 TopTierElectric. All rights reserved.</p>\n    </footer>\n</body>\n</html>
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Base Layout', description = 'A base layout for Astrowind projects' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="TopTierElectric" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the Base Layout</h1>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>&copy; 2026 TopTierElectric. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
