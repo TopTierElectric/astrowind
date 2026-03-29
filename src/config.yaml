@@ -9,18 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Top Tier Electrical
-    template: '%s — Top Tier Electrical'
-  description: 'Licensed & insured electrician serving West Michigan. Panel upgrades, EV chargers, lighting, and reliable troubleshooting.'
+    default: 'Top Tier Electrical | Licensed Electrician in West Michigan'
+    template: '%s | Top Tier Electrical'
+  description: 'Licensed & insured electrical contractor serving West Michigan. Residential & commercial electrical services including panel upgrades, EV chargers, lighting, generators. MI License #6220430. Call (616) 334-7159.'
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Top Tier Electrical
-    images:
-      - url: 'https://toptier-electrical.com/images/logos/TopTierElectrical_Primary_FlatGold_512.png'
-        width: 512
-        height: 512
     type: website
     locale: en_US
   twitter:
