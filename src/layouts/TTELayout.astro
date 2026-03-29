@@ -57,9 +57,18 @@ const jsonLdScripts = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Top Tier Electrical" />
+    <meta property="og:locale" content="en_US" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <!-- Geo -->
+    <meta name="geo.region" content="US-MI" />
+    <meta name="geo.placename" content="West Michigan" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={canonicalUrl} />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,9 +82,6 @@ const jsonLdScripts = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </noscript>
     <!-- TTE Styles -->
-    <link rel="preload" href="/css/design-tokens.css" as="style" />
-    <link rel="preload" href="/styles.css" as="style" />
-    <link rel="preload" href="/css/components.css" as="style" />
     <link rel="stylesheet" href="/css/design-tokens.css" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/components.css" />
@@ -183,7 +189,7 @@ const jsonLdScripts = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         </picture>
       </div>
       <p>MI License #6220430</p>
-      <p>&copy; 2025 Top Tier Electrical. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Top Tier Electrical. All rights reserved.</p>
     </footer>
 
     <script src="/script.js" is:inline></script>
