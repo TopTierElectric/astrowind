@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function tteTrack(eventName, meta) {
     window.dispatchEvent(new CustomEvent('tte:track', { detail: { eventName, meta } }));
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, meta || {});
+    }
   }
 
   function trackCta(target) {
@@ -129,10 +132,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  document.addEventListener('click', function (event) {
+    const proofTarget = event.target.closest('[data-proof-click]');
+    if (proofTarget) {
+      tteTrack('project_proof_click', {
+        proofId: proofTarget.getAttribute('data-proof-click') || '',
+      });
+    }
+  });
+
   document.querySelectorAll('form').forEach(function (form) {
     form.addEventListener('submit', function () {
       tteTrack('form_submit', {
-        formName: form.getAttribute('name') || 'unnamed',
+        formName: form.getAttribute('data-form-name') || form.getAttribute('name') || 'unnamed',
       });
     });
   });
