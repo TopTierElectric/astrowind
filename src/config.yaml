@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: Top Tier Electrical
     images:
-      - url: '~/assets/images/TopTierElectrical_Primary_FlatGold_512.png'
-        width: 512
-        height: 512
+      - url: '~/assets/images/TopTierElectrical_OpenGraph_1200x630.webp'
+        width: 1200
+        height: 630
     type: website
     locale: en_US
   twitter:
