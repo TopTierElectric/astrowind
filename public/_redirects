@@ -10,13 +10,13 @@
 # Optional: true legacy semantic redirects (only if these URLs were used historically)
 /pricing /services 301
 
-# Legacy logo file locations migrated to assets/images/logos
-/TopTierElectrical_Primary_Black_2048.png /assets/images/logos/TopTierElectrical_Primary_Black_2048.png 301
-/TopTierElectrical_Primary_FlatGold_2048.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_2048.png 301
-/TopTierElectrical_Primary_FlatGold_4096.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_4096.png 301
-/TopTierElectrical_Primary_FlatGold_512.png /assets/images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
-/TopTierElectrical_Primary_White_2048.png /assets/images/logos/TopTierElectrical_Primary_White_2048.png 301
-/TopTierElectrical_Primary_White_512.png /assets/images/logos/TopTierElectrical_Primary_White_512.png 301
+# Legacy logo file locations → astrowind public/images/logos
+/TopTierElectrical_Primary_Black_2048.png /images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_FlatGold_2048.png /images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_FlatGold_4096.png /images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_FlatGold_512.png /images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_White_2048.png /images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
+/TopTierElectrical_Primary_White_512.png /images/logos/TopTierElectrical_Primary_FlatGold_512.png 301
 
 # Canonical route aliases for slash-style blog/service slugs
 /blog/electrical-safety-tips /blog-electrical-safety 301
