@@ -90,9 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function tteTrack(eventName, meta) {
     window.dispatchEvent(new CustomEvent('tte:track', { detail: { eventName, meta } }));
-    if (typeof gtag === 'function') {
-      gtag('event', eventName, meta || {});
-    }
   }
 
   function trackCta(target) {
