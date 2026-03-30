@@ -5,7 +5,7 @@
   "type": "module",
   "private": true,
   "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
+    "node": "^20.3.0 || >= 21.0.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -13,6 +13,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "deploy": "wrangler pages deploy ./dist --project-name=toptier-electrical",
+    "deploy:preview": "wrangler pages deploy ./dist --project-name=toptier-electrical --branch=preview",
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
     "check:astro": "astro check",
     "check:eslint": "eslint .",
