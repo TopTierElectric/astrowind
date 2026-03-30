@@ -51,11 +51,11 @@ npm run fix          # Auto-fix lint/format issues
 
 ## 🚢 Deployment
 
-| Platform | Config file | Status |
-|----------|-------------|--------|
-| **Netlify** (primary) | `netlify.toml` | ✅ Active |
-| **Vercel** | `vercel.json` | ✅ Ready |
-| **Docker** | `Dockerfile` + `docker-compose.yml` | ✅ Ready |
+| Platform              | Config file                         | Status    |
+| --------------------- | ----------------------------------- | --------- |
+| **Netlify** (primary) | `netlify.toml`                      | ✅ Active |
+| **Vercel**            | `vercel.json`                       | ✅ Ready  |
+| **Docker**            | `Dockerfile` + `docker-compose.yml` | ✅ Ready  |
 
 ---
 
