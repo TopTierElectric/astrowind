@@ -1,3 +1,4 @@
+<<<<<<< copilot/update-readme-for-archival
 # ⚡ Top Tier Electrical — Original Template Fork (Archived)
 
 > **⚠️ This repository has been superseded.**  
@@ -16,6 +17,20 @@
 This was the original fork of the [AstroWind](https://github.com/onwidget/astrowind) template used to bootstrap the Top Tier Electrical business website. All active development has moved to the new repository.
 
 🌐 **Live site:** [https://toptier-electrical.com](https://toptier-electrical.com)
+=======
+# ⚠️ This Repository Is Archived
+
+> **The active Top Tier Electrical website has moved to [`TopTierElectric/toptier-electrical`](https://github.com/TopTierElectric/toptier-electrical).**
+
+This repo (`astrowind`) was the original AstroWind template fork used during initial development. All active development, deployments, and issues are now tracked in the new repository.
+
+---
+
+## 🔗 Links
+
+- **Active repo:** [TopTierElectric/toptier-electrical](https://github.com/TopTierElectric/toptier-electrical)
+- **Live site:** [https://toptier-electrical.com](https://toptier-electrical.com)
+>>>>>>> main
 
 ---
 
